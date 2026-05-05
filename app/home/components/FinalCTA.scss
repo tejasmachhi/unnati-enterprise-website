@@ -10,6 +10,10 @@
   overflow: hidden;
   font-family: var(--font-family-primary);
 
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+
   // Decorative Background Orbs
   .cta-background-elements {
     position: absolute;
@@ -92,12 +96,18 @@
     }
 
     .cta-title {
-      font-size: clamp(36px, 5vw, 56px);
+      font-size: clamp(32px, 8vw, 56px);
       font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 24px;
+      line-height: 1.2;
+      margin-bottom: 20px;
       letter-spacing: -0.02em;
       color: var(--color-white);
+
+      br {
+        @media (max-width: 576px) {
+          display: none; // Let it wrap naturally on small screens
+        }
+      }
 
       .text-gradient {
         background: linear-gradient(90deg, #60a5fa, #3b82f6);
@@ -279,6 +289,11 @@
               color: white;
               font-weight: 600;
               line-height: 1.4;
+              word-break: break-word; // Prevent email from breaking layout on mobile
+
+              @media (max-width: 576px) {
+                font-size: 15px;
+              }
             }
           }
         }

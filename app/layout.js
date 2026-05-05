@@ -3,7 +3,7 @@ import { Analytics } from '@vercel/analytics/next';
 import './globals.scss';
 
 export const metadata = {
-  metadataBase: new URL('https://unnatienterprise.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://unnati-enterprise-website.vercel.app'),
   title: {
     default: 'Unnati Enterprise | Industrial Safety Equipment Supplier Ahmedabad',
     template: '%s | Unnati Enterprise'
@@ -38,10 +38,10 @@ export const metadata = {
     siteName: 'Unnati Enterprise',
     images: [
       {
-        url: '/images/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Unnati Enterprise Industrial Safety Equipment',
+        url: '/images/logos/logo.png',
+        width: 512,
+        height: 512,
+        alt: 'Unnati Enterprise Logo',
       },
     ],
     locale: 'en_IN',
@@ -51,7 +51,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Unnati Enterprise | Industrial Safety Equipment',
     description: 'Premium industrial safety equipment supplier in Ahmedabad. Certified PPE and safety solutions.',
-    images: ['/images/og-image.jpg'],
+    images: ['/images/logos/logo.png'],
   },
   robots: {
     index: true,

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" fill="none">
+  <rect width="280" height="80" rx="4" fill="white"/>
+  <!-- Triangle icon -->
+  <path d="M40 15 L60 55 L20 55 Z" fill="#E31937"/>
+  <circle cx="40" cy="38" r="8" fill="white"/>
+  <path d="M40 32 L40 38 M37 44 L40 38 L43 44" stroke="#E31937" stroke-width="2" fill="none"/>
+  <!-- Text -->
+  <text x="160" y="48" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="34" fill="#333" text-anchor="middle" letter-spacing="2">VENUS</text>
+  <text x="270" y="38" font-family="Arial" font-size="12" fill="#333" text-anchor="end">®</text>
+  <text x="160" y="65" font-family="Arial" font-size="8" fill="#E31937" text-anchor="middle" letter-spacing="1">High Protection | Best Comfort | Great Value</text>
+</svg>

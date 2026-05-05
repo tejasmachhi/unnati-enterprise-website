@@ -1,0 +1,198 @@
+// Home Page Styles - Consolidated All Home Components
+// This file contains all SCSS for home page sections to eliminate confusion
+
+// Safety Compliance Component Styles
+.safety-compliance {
+  padding: 4rem 1.5rem;
+  background: var(--bg-secondary);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    .section-label {
+      display: inline-block;
+      background: var(--color-accent);
+      color: var(--color-white);
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+
+  .compliance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .compliance-card {
+    background: var(--color-white);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--color-accent);
+
+      &::before {
+        transform: scaleX(1);
+      }
+
+      .compliance-icon {
+        background: var(--color-accent);
+        color: var(--color-white);
+        transform: scale(1.1);
+      }
+    }
+
+    .compliance-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--bg-secondary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+      font-size: 1.5rem;
+      color: var(--color-accent);
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .certification-badge {
+      display: inline-block;
+      background: var(--color-success);
+      color: var(--color-white);
+      padding: 0.3rem 0.8rem;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .compliance-list {
+      list-style: none;
+      padding: 0;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        margin-bottom: 0.5rem;
+
+        &::before {
+          content: '✓';
+          color: var(--color-success);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+
+
+  // Mobile Responsive
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+
+    .section-header {
+      margin-bottom: 2rem;
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .section-subtitle {
+        font-size: 1rem;
+      }
+    }
+
+    .compliance-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .compliance-card {
+      padding: 1.5rem;
+
+      .compliance-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+
+    .brands-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+}

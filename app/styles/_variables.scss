@@ -1,0 +1,123 @@
+:root {
+  /* Brand Primary - UTI Enterprise Blue (from logo) */
+  --color-primary: #12203f;
+  --color-primary-light: #0d367a;
+  --color-primary-dark: #203365;
+  --color-primary-bright: #60a5fa;
+
+  /* Brand Secondary - Dark Blue (logo swoosh) */
+  --color-secondary: #3f58a785;
+  --color-secondary-light: #202c46;
+  --color-secondary-dark: #1e3a8a;
+
+  /* Brand Accent - Safety Yellow (hard hat background) */
+  --color-accent: #032e6a;
+  --color-accent-light: #042965;
+  --color-accent-bright: #23355a;
+  --color-accent-dark: #060a58;
+
+  /* Safety Highlight - Orange */
+  --color-safety: #fb923c;
+  --color-safety-dark: #f97316;
+  --color-safety-bright: #fed7aa;
+
+  /* Success - Bright Green */
+  --color-success: #10b981;
+  --color-success-light: #34d399;
+
+  /* Neutrals - Clean Grays */
+  --color-white: #ffffff;
+  --color-light-gray: #f8fafc;
+  --color-gray: #e2e8f0;
+  --color-dark-gray: #64748b;
+  --color-black: #0f172a;
+
+  /* Text */
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-inverse: #ffffff;
+  --text-bright: #2563eb;
+
+  /* UI States */
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #2563eb;
+
+  /* Borders & Effects */
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 40px rgba(18, 32, 63, 0.18);
+
+  /* Radius - STRICT UNIVERSAL SYSTEM (ONLY TWO VALUES ALLOWED) */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  /* NEW STANDARD - Universal */
+  /* WARNING: DO NOT USE OTHER RADIUS VALUES - STRICT ENFORCEMENT */
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  --spacing-4xl: 6rem;
+
+  /* Typography - OUTFIT FONT SYSTEM */
+  /* Typography System */
+  --font-family-primary: "Poppins", sans-serif;
+  --font-family-heading: "Poppins", sans-serif;
+  --font-family-body: "Poppins", sans-serif;
+  --font-family-ui: "Poppins", sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+
+  /* Backgrounds */
+  --bg-primary: var(--color-white);
+  --bg-secondary: var(--color-light-gray);
+  --bg-accent: var(--color-primary-light);
+  --bg-brand: var(--color-primary);
+
+  /* Transitions */
+  --transition-base: all 0.3s ease;
+  --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  --transition-bounce: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Glass Effects */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-bg-light: rgba(255, 255, 255, 0.05);
+
+  /* Additional Colors */
+  --color-safety-red: #e63946;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #128c7e;
+  --color-orange: #ff6b35;
+  --color-orange-light: #f7931e;
+  --color-success-bright: #00ff88;
+  --color-success-medium: #00cc6a;
+  --color-blue-bright: #0062ff;
+  --color-green-bright: #00d285;
+  --color-cyan: #00d4ff;
+  --color-dark-bg: #0a0f18;
+  --color-dark-text: #1a1a1a;
+  --color-text-gray: #64748b;
+  --color-light-text: #e0e0e0;
+
+  /* Aliases for backward compatibility */
+  --primary: var(--color-primary);
+  --primary-dark: var(--color-primary-dark);
+  --secondary: var(--color-secondary);
+  --accent: var(--color-accent);
+  --border: var(--border-color);
+}

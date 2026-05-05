@@ -1,0 +1,82 @@
+/* Simple Contact Form Styles */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.contact-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-form__label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.contact-form__input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  color: var(--text-primary);
+  background: var(--color-white);
+  transition: var(--transition-base);
+  font-family: inherit;
+}
+
+.contact-form__input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(18, 32, 63, 0.1);
+}
+
+.contact-form__input::placeholder {
+  color: var(--color-dark-gray);
+}
+
+.contact-form__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-white);
+  background: var(--color-primary);
+  cursor: pointer;
+  transition: var(--transition-base);
+  margin-top: 1rem;
+}
+
+.contact-form__button:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-form__button:active {
+  transform: translateY(0);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .contact-form__input {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .contact-form__button {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+}

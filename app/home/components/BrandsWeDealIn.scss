@@ -1,0 +1,188 @@
+.brands-section {
+  padding: var(--spacing-4xl) 0;
+  background: var(--color-light-gray);
+  overflow: hidden;
+
+  .container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+  }
+
+  // ================= HEADER =================
+
+  .brands-header {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .tag {
+      display: inline-block;
+      background: rgba(3, 46, 106, 0.08);
+      color: var(--color-primary-bright);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .title {
+      font-size: var(--text-4xl);
+      font-weight: 900;
+      color: var(--color-primary);
+      margin-bottom: var(--spacing-md);
+      font-family: var(--font-family-heading);
+
+      .highlight {
+        color: var(--color-primary-bright);
+      }
+    }
+
+    .subtitle {
+      color: var(--color-dark-gray);
+      font-size: var(--text-xl);
+      line-height: 1.6;
+    }
+  }
+
+  // ================= MARQUEE =================
+
+  .marquee-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    // Gradient fade on both edges
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 120px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(to right, var(--color-light-gray), transparent);
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(to left, var(--color-light-gray), transparent);
+    }
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: var(--spacing-2xl);
+    width: max-content;
+    animation: marquee-scroll 35s linear infinite;
+    padding: 20px 0; // Prevent clipping on hover
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  // ================= BRAND CARD =================
+
+  .brand-card {
+    flex-shrink: 0;
+    width: 280px;
+    height: 140px;
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    transition: var(--transition-smooth);
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--color-primary-bright);
+    }
+
+    img {
+      max-width: 85%;
+      max-height: 85px;
+      object-fit: contain;
+      filter: grayscale(100%);
+      opacity: 0.55;
+      transition: all 0.4s ease;
+    }
+
+    &:hover img {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    .brand-fallback {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-xl);
+      font-weight: 800;
+      color: var(--color-primary);
+      font-family: var(--font-family-heading);
+      letter-spacing: 1px;
+    }
+  }
+
+  // ================= ANIMATION =================
+
+  @keyframes marquee-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  // ================= RESPONSIVE =================
+
+  @media (max-width: 768px) {
+    padding: var(--spacing-3xl) 0;
+
+    .brands-header {
+      .title {
+        font-size: var(--text-3xl);
+      }
+
+      .subtitle {
+        font-size: var(--text-base);
+      }
+    }
+
+    .brand-card {
+      width: 200px;
+      height: 100px;
+      padding: var(--spacing-md);
+
+      img {
+        max-height: 60px;
+      }
+    }
+
+    .marquee-wrapper {
+      &::before,
+      &::after {
+        width: 60px;
+      }
+    }
+  }
+}

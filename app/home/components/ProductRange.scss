@@ -1,0 +1,422 @@
+// =====================================================
+// Product Range – Premium Redesign
+// =====================================================
+
+.product-range {
+  background: var(--color-primary);
+  overflow: hidden;
+
+  // ── Full-bleed two-column wrapper ──
+  .pr-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 700px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // =====================================================
+  // LEFT: Visual panel
+  // =====================================================
+
+  .pr-visual {
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+
+    // Stacked slides
+    &__slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
+
+      &.active {
+        opacity: 1;
+        z-index: 2;
+
+        img {
+          transform: scale(1);
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.06);
+        transition: transform 8s ease;
+      }
+    }
+
+    // Gradient overlay using CSS custom property for accent color
+    &__overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      background: linear-gradient(
+        135deg,
+        rgba(18, 32, 63, 0.75) 0%,
+        rgba(18, 32, 63, 0.4) 50%,
+        rgba(18, 32, 63, 0.85) 100%
+      );
+
+      // Subtle colored accent at bottom
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 200px;
+        background: linear-gradient(to top, rgba(18, 32, 63, 0.98) 0%, transparent 100%);
+      }
+    }
+
+    // Floating product-list card
+    &__card {
+      position: absolute;
+      bottom: 36px;
+      left: 32px;
+      z-index: 5;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      max-width: 320px;
+      animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+      @keyframes slideUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      .pr-visual__card-label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--color-primary-bright);
+        margin: 0 0 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        i { font-size: 0.65rem; }
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        li {
+          font-size: var(--text-sm);
+          color: rgba(255, 255, 255, 0.85);
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          line-height: 1.3;
+
+          &::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--color-primary-bright);
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
+
+    // Slide counter badge (top-right)
+    &__counter {
+      position: absolute;
+      top: 28px;
+      right: 28px;
+      z-index: 5;
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      font-family: var(--font-family-heading);
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-sm);
+      padding: 8px 14px;
+
+      .current {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--color-white);
+        line-height: 1;
+      }
+
+      .sep {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.3);
+      }
+
+      .total {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.4);
+      }
+    }
+  }
+
+  // =====================================================
+  // RIGHT: Content & tabs
+  // =====================================================
+
+  .pr-content {
+    padding: 64px 52px;
+    background: var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    border-left: 1px solid rgba(255, 255, 255, 0.06);
+
+    @media (max-width: 1200px) {
+      padding: 48px 36px;
+    }
+
+    @media (max-width: 1024px) {
+      padding: 48px 24px;
+      border-left: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+  }
+
+  // Header block
+  .pr-header {
+    .pr-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      color: var(--color-primary-bright);
+      background: rgba(96, 165, 250, 0.1);
+      border: 1px solid rgba(96, 165, 250, 0.18);
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+
+      i { font-size: 0.65rem; }
+    }
+
+    h2 {
+      font-family: var(--font-family-heading);
+      font-size: var(--text-4xl);
+      font-weight: 900;
+      color: var(--color-white);
+      line-height: 1.15;
+      margin: 0 0 14px;
+
+      .highlight { color: var(--color-primary-bright); }
+
+      @media (max-width: 768px) {
+        font-size: var(--text-3xl);
+      }
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: var(--text-base);
+      line-height: 1.65;
+      max-width: 420px;
+      margin: 0;
+    }
+  }
+
+  // Tabs list
+  .pr-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pr-tab {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    text-align: left;
+    overflow: hidden;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.12);
+      transform: translateX(4px);
+    }
+
+    &.active {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.14);
+
+      .pr-tab__num {
+        color: var(--accent, var(--color-primary-bright));
+        opacity: 1;
+      }
+
+      .pr-tab__icon {
+        background: var(--accent, var(--color-primary-bright));
+        color: var(--color-white);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      }
+
+      .pr-tab__text h4 {
+        color: var(--color-white);
+      }
+
+      .pr-tab__arrow {
+        opacity: 1;
+        transform: translateX(0);
+        color: var(--accent, var(--color-primary-bright));
+      }
+    }
+
+    // Left cluster: number + icon + text
+    &__left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    &__num {
+      font-family: var(--font-family-heading);
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.2);
+      letter-spacing: 1px;
+      min-width: 22px;
+      opacity: 0.6;
+      transition: color 0.3s ease, opacity 0.3s ease;
+    }
+
+    &__icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.5);
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    &__text {
+      flex: 1;
+      min-width: 0;
+
+      h4 {
+        font-family: var(--font-family-heading);
+        font-size: var(--text-base);
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.75);
+        margin: 0 0 3px;
+        transition: color 0.3s ease;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      p {
+        font-size: var(--text-xs);
+        color: rgba(255, 255, 255, 0.35);
+        margin: 0;
+        line-height: 1.4;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    &__arrow {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.2);
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    // Auto-progress bar at bottom
+    &__progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    &__progress-fill {
+      height: 100%;
+      width: 0;
+      background: var(--accent, var(--color-primary-bright));
+
+      @keyframes pr-progress {
+        from { width: 0%; }
+        to   { width: 100%; }
+      }
+    }
+
+    &.active &__progress-fill {
+      animation: pr-progress linear forwards;
+    }
+  }
+
+  // =====================================================
+  // Responsive
+  // =====================================================
+
+  @media (max-width: 768px) {
+    .pr-content {
+      padding: 36px 20px;
+      gap: 28px;
+    }
+
+    .pr-header h2 {
+      font-size: var(--text-2xl);
+    }
+
+    .pr-visual__card {
+      left: 16px;
+      bottom: 20px;
+      padding: 14px 18px;
+    }
+
+    .pr-tab {
+      padding: 14px 16px;
+
+      &__text p {
+        display: none;
+      }
+    }
+  }
+}

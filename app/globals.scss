@@ -1,0 +1,43 @@
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+// Master SCSS File - Import Once On
+// Premium Font Imports: Fjalla One (headings) + Saira (body, ui)
+// Fonts are imported in layout.js for better performance
+
+// Font Awesome removed - now imported in layout.js for faster compilation
+
+// Core styles
+@import "./styles/reset";
+@import "./styles/variables";
+@import "./styles/mixins";
+@import "./styles/base";
+
+// Page styles
+@import "./home/page";
+@import "./about/page";
+@import "./services/page";
+@import "./contact/page";
+@import "./products/page";
+
+// Shared components
+@import "./components/Header";
+@import "./components/Footer";
+@import "./components/Button";
+@import "./components/Section";
+@import "./components/PageHero";
+
+// Home page components 
+@import "./home/components/Hero3.scss";
+@import "./home/components/IndustriesServed.scss";
+@import "./home/components/FeaturedProducts.scss";
+@import "./home/components/ProductRange.scss";
+@import "./home/components/SafetyCompliance.scss";
+@import "./home/components/WhyChooseUs.scss";
+@import "./home/components/BulkSupply.scss";
+
+@import "./home/components/FinalCTA.scss";
+@import "./home/components/BrandsWeDealIn.scss";

@@ -1,0 +1,201 @@
+.shop-by-category {
+  padding: 8rem 0;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .header-left {
+      .subtitle {
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--color-primary-bright);
+        margin-bottom: 0.75rem;
+      }
+
+      .title {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #0a0f18;
+        margin: 0;
+        font-family: var(--font-family-heading);
+      }
+    }
+
+    .slider-controls {
+      display: flex;
+      gap: 1rem;
+
+      .slider-nav-btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid rgba(10, 15, 24, 0.1);
+        background: transparent;
+        color: #0a0f18;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: var(--color-primary-bright);
+          border-color: var(--color-primary-bright);
+          color: white;
+          transform: translateY(-2px);
+        }
+
+        &.swiper-button-disabled {
+          opacity: 0.3;
+          cursor: not-allowed;
+          &:hover {
+            transform: none;
+            background: transparent;
+            border-color: rgba(10, 15, 24, 0.1);
+            color: #0a0f18;
+          }
+        }
+      }
+    }
+  }
+
+  .category-swiper {
+    padding: 1rem 0 4rem;
+    overflow: visible;
+  }
+
+  .category-card {
+    position: relative;
+    background: #f8f9fa;
+    border: 1px solid rgba(10, 15, 24, 0.05);
+    padding: 3rem 2.5rem;
+    height: 100%;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+    overflow: hidden;
+
+    .category-number {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      font-size: 4rem;
+      font-weight: 900;
+      color: rgba(10, 15, 24, 0.03);
+      line-height: 1;
+      transition: all 0.4s ease;
+      z-index: 1;
+    }
+
+    .card-content {
+      position: relative;
+      z-index: 2;
+
+      .category-name {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #0a0f18;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+        transition: color 0.3s ease;
+      }
+
+      .product-count {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: rgba(10, 15, 24, 0.5);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .card-footer {
+        margin-top: auto;
+        padding-top: 3rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        transition: transform 0.3s ease;
+
+        .explore-text {
+          font-size: 0.9rem;
+          font-weight: 700;
+          color: var(--color-primary-bright);
+        }
+
+        i {
+          font-size: 0.8rem;
+          color: var(--color-primary-bright);
+          transition: transform 0.3s ease;
+        }
+      }
+    }
+
+    .card-hover-bg {
+      position: absolute;
+      inset: 0;
+      background: #0a0f18;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      z-index: 1;
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(10, 15, 24, 0.1);
+
+      .card-hover-bg {
+        transform: translateY(0);
+      }
+
+      .category-number {
+        color: rgba(255, 255, 255, 0.05);
+        transform: scale(1.1);
+      }
+
+      .category-name {
+        color: #ffffff;
+      }
+
+      .product-count {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      .card-footer {
+        transform: translateX(10px);
+        
+        .explore-text {
+          color: var(--color-primary-bright);
+        }
+        
+        i {
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+}

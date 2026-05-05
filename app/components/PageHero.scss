@@ -1,0 +1,185 @@
+// =====================================================
+// PageHero – Shared hero for inner pages
+// =====================================================
+
+.page-hero {
+  position: relative;
+  background: var(--color-primary);
+  padding: 160px 0 90px;
+  text-align: center;
+  overflow: hidden;
+
+  // ── Background layers ──────────────────────────────
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  &__img {
+    opacity: 0.4;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(18, 32, 63, 0.92) 0%,
+      rgba(18, 32, 63, 0.65) 45%,
+      rgba(18, 32, 63, 0.97) 100%
+    );
+    z-index: 2;
+  }
+
+  &__glow {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.12) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  &__pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 36px 36px;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  // ── Content body ───────────────────────────────────
+  &__body {
+    position: relative;
+    z-index: 5;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  // ── Breadcrumb ─────────────────────────────────────
+  &__breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 600;
+
+    .bc-link {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.25s ease;
+
+      i { font-size: 0.7rem; }
+
+      &:hover {
+        color: var(--color-primary-bright);
+      }
+    }
+
+    .bc-sep {
+      color: rgba(255, 255, 255, 0.2);
+      font-size: 0.6rem;
+    }
+
+    .bc-current {
+      color: var(--color-primary-bright);
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+  }
+
+  // ── Title ──────────────────────────────────────────
+  &__title {
+    font-family: var(--font-family-heading);
+    font-size: var(--text-5xl);
+    font-weight: 900;
+    color: var(--color-white);
+    line-height: 1.15;
+    margin: 0;
+    text-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+
+    .highlight {
+      color: var(--color-primary-bright);
+      position: relative;
+    }
+
+    @media (max-width: 768px) { font-size: var(--text-4xl); }
+    @media (max-width: 480px) { font-size: var(--text-3xl); }
+  }
+
+  // ── Subtitle ───────────────────────────────────────
+  &__subtitle {
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.65;
+    max-width: 640px;
+    margin: 0;
+    font-weight: 300;
+
+    @media (max-width: 768px) { font-size: var(--text-base); }
+  }
+
+  // ── Decorative divider ─────────────────────────────
+  &__line {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 4px;
+
+    span {
+      display: block;
+      width: 50px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.5));
+
+      &:last-child {
+        background: linear-gradient(90deg, rgba(96, 165, 250, 0.5), transparent);
+      }
+    }
+
+    i {
+      color: var(--color-primary-bright);
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+  }
+
+  // ── Responsive ─────────────────────────────────────
+  @media (max-width: 768px) {
+    padding: 110px 0 60px;
+
+    &__body { gap: 14px; }
+  }
+
+  @media (max-width: 480px) {
+    padding: 100px 0 50px;
+
+    &__body { padding: 0 20px; }
+    
+    &__title { font-size: 2.1rem; }
+    &__subtitle { font-size: 0.95rem; }
+    
+    &__breadcrumb {
+      padding: 6px 16px;
+      font-size: 0.72rem;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+// STRICT UNIVERSAL BORDER RADIUS SYSTEM (ONLY TWO VALUES)
+$border-radius-sm: 6px;
+$border-radius-md: 10px;
+// WARNING: STRICT ENFORCEMENT - ONLY USE THESE TWO VALUES
+// NO OTHER BORDER RADIUS VALUES ALLOWED IN PROJECT
+
+// Universal Font System - POPPINS
+$font-heading: "Poppins", sans-serif;
+$font-body: "Poppins", sans-serif;
+$font-ui: "Poppins", sans-serif;
+
+// Import Google Fonts - POPPINS
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');

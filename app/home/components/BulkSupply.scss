@@ -1,0 +1,198 @@
+// =======================================
+// BULK SUPPLY SECTION
+// =======================================
+
+.bulk-supply {
+  padding: var(--spacing-4xl) 0;
+  background: var(--color-white);
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+
+    @media (max-width: 768px) {
+      padding: 0 var(--spacing-md);
+    }
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-4xl);
+  }
+
+  // =======================================
+  // MAIN GRID
+  // =======================================
+
+  .bulk-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-4xl);
+    align-items: center;
+
+    @media (max-width: 992px) {
+      gap: var(--spacing-3xl);
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-2xl);
+    }
+  }
+
+  // =======================================
+  // LEFT CONTENT
+  // =======================================
+
+  .bulk-text {
+
+    .bulk-title {
+      font-size: var(--text-4xl);
+      font-weight: 800;
+      color: var(--color-primary);
+      margin-bottom: var(--spacing-lg);
+      line-height: 1.2;
+    }
+
+    .bulk-description {
+      font-size: var(--text-lg);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: var(--spacing-2xl);
+      max-width: 600px;
+    }
+
+    @media (max-width: 768px) {
+      text-align: center;
+
+      .bulk-title {
+        font-size: var(--text-3xl);
+      }
+
+      .bulk-description {
+        font-size: var(--text-base);
+      }
+    }
+  }
+
+  // =======================================
+  // FEATURES LIST
+  // =======================================
+
+  .bulk-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+
+    .bulk-feature {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      font-size: var(--text-base);
+      font-weight: 500;
+      color: var(--text-primary);
+      background: var(--color-white);
+      padding: 0.9rem 1.2rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-base);
+
+      i {
+        font-size: var(--text-lg);
+        color: var(--color-primary);
+      }
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+        background: var(--color-primary-bright);
+        color: var(--color-white);
+
+        i {
+          color: var(--color-white);
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+
+      .bulk-feature {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  }
+
+
+  // =======================================
+  // RIGHT SIDE STATS BOX
+  // =======================================
+
+  .bulk-image {
+    display: flex;
+    justify-content: center;
+
+    .bulk-stats {
+
+      display: grid;
+      gap: var(--spacing-xl);
+      width: 100%;
+      max-width: 420px;
+
+      .bulk-stat {
+        text-align: center;
+        box-shadow: var(--shadow-lg);
+        border-radius: var(--radius-md);
+        padding: var(--spacing-md) var(--spacing-xl);
+
+
+        .stat-number {
+          display: block;
+          font-size: var(--text-4xl);
+          font-weight: 800;
+          color: var(--color-primary);
+          margin-bottom: var(--spacing-xs);
+        }
+
+        .stat-label {
+          font-size: var(--text-base);
+          font-weight: 500;
+          color: var(--text-secondary);
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      .bulk-stats {
+        padding: var(--spacing-xl);
+        gap: var(--spacing-lg);
+
+        .bulk-stat {
+          .stat-number {
+            font-size: var(--text-3xl);
+          }
+
+          .stat-label {
+            font-size: var(--text-sm);
+          }
+        }
+      }
+    }
+  }
+
+  // =======================================
+  // SECTION LEVEL RESPONSIVE
+  // =======================================
+
+  @media (max-width: 992px) {
+    padding: var(--spacing-3xl) var(--spacing-md);
+  }
+
+  @media (max-width: 576px) {
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+}

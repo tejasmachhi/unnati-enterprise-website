@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 80" fill="none">
+  <rect width="260" height="80" rx="4" fill="white"/>
+  <!-- L&T-SuFin text -->
+  <text x="100" y="40" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="24" fill="#003D6B" text-anchor="middle">L&amp;T-S<tspan fill="#E31937">u</tspan>F<tspan fill="#E31937">i</tspan>n</text>
+  <!-- Tagline -->
+  <text x="130" y="58" font-family="Arial" font-size="8" fill="#666" text-anchor="middle" letter-spacing="0.5">A brand of Larsen &amp; Toubro</text>
+</svg>
